@@ -72,6 +72,10 @@ div.flex-row {
     opacity: 0.2;
 }
 
+.item.touched{
+    background-color: var(--sortable-list-item-done);
+}
+
 .item .text{
     display: flex;
     align-items: center;
@@ -99,4 +103,8 @@ textarea.larger {
 
 .song-name{
     margin-left: 5px;
+}
+
+.timing-out{
+    visibility: hidden;
 }

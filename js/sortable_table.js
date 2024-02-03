@@ -4,11 +4,11 @@ const items = sortableList.querySelectorAll(".item"); //from the sortableList, s
 items.forEach(item => {
     item.addEventListener("dragstart", () => {
         //item.classList.add("dragging")
-        //this is needed to make sure the thing you're dragging stays visible - why
+        //this is needed to make sure the thing you're dragging stays visible
         setTimeout(() => item.classList.add("dragging"), 0); 
     });
     // Removing dragging class from item on dragend event
-    item.addEventListener("dragend", () => item.classList.remove("dragging"));
+    item.addEventListener("dragend", () => {item.classList.remove("dragging");item.classList.add("touched")});
 
     /* This attempts to color the thing on mouse enter, but its still buggy.
     item.addEventListener('mouseenter', function () {

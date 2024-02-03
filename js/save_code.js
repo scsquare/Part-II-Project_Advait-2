@@ -35,7 +35,7 @@ function saveCode (form) {
       //ASSERT: the set codes correspond to the right task
     }
     else{
-
+      //From previous version
       localStorage.setItem("name","{'name':'".concat(name,"'}")); //consent
 
       alert("You entered the code " +code);
@@ -43,8 +43,10 @@ function saveCode (form) {
       localStorage.setItem("init_code",code);
       localStorage.setItem("working_code",code);
       localStorage.setItem("current_page_code","1");
+
       //actually proceed
       window.location.href = "sets/BeforeTasks.html";
+      
     }
 
 }

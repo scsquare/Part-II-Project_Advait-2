@@ -8,10 +8,13 @@ function saveBeforeTasksQuestions (form) {
     else{
         var results="{'time':'".concat(time,"'},{'qualification':'",qualification,"'}");
         localStorage.setItem("beforeTaskQuestions",results);
+
+
         window.location.href="../sets/Intro1.html";
     }
 
 }
+
 
 var qualification = document.getElementById("qualification");
 

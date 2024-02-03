@@ -11,16 +11,26 @@ function writeResults(){
     if (typeof(Storage) !== "undefined") {
         // store in local storage
         var current_page_code=localStorage.getItem("current_page_code");
+       
+        //THE ACTUAL STORE
         localStorage.setItem(current_page_code,texts); 
+
+        //ASSERT: UID is not null
+        //this is enforced by not even showing the next button in BeforeTasks until UID is ready 
+
+        UID=localStorage.getItem("UID");
+
+        data=UID+"."+current_page_code+"."+texts;
+        post(data);
+
         if (localStorage.getItem(current_page_code)===null){
             alert("ERROR on_click_next_page: store failed")
         }
 
-        //alert(current_page_code+":"+localStorage.getItem(current_page_code)); //testing purposes
 
     } else {
         // Sorry! No Web Storage support..
-        alert("ERROR: No Web Storage support. Did you not click the test requirement button at the beginning? :(");
+        alert("ERROR: No Web Storage support.");
     }
 }
 
@@ -65,6 +75,7 @@ function findNextPage(){
 }
 
 const contButton = document.getElementById("cont");
+
 contButton.addEventListener("click", () => {
     var current_page_code=localStorage.getItem("current_page_code");
     if (current_page_code>="A"){
