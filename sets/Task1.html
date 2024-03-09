@@ -8,10 +8,6 @@
   <link href="../css/tempo.css" rel="stylesheet">
   <link href="../css/class.css" rel="stylesheet">
 
-  <!--These canNOT be deferred-->
-  <script src="../js/get_current_page_code.js"></script>
-  <script src="../js/on_load_page.js"></script> <!--this has to run AFTER get current page code-->
-
 
   <!--I don't think this needs to be deferred, just run before the other 3 below-->
   <script src="../js/send_request.js"></script>
@@ -22,21 +18,19 @@
   <script src="../js/on_click_next_page.js" defer></script>
 
 
-
-
 </head>
 
 <body>
-  <h1>Part 1: sort according to tempo</h1>
+  <h1 id="header"></h1>
   <div class="flex-row colored">
     <div class="playlist-column">
         <iframe id="spotify-playlist" class="playlist-wrapper" style="border-radius:12px" src="" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
                  <!--encrypted-media;  is removed to force preview-->
     </div>
     <div class="ranking-column">
-        <p>Please sort in descending order according to tempo (fastest on top, slowest at the bottom).</p>
-        <p> Reminder: you can drag and drop the items to reorder them.</p>
-
+        <p id="description"></p>
+        <p> You can drag and drop the items to reorder them.</p>
+        <p id="reminder"></p>
         <ul class="sortable-list">
             <li class="item" draggable="true">
               <div class="text">

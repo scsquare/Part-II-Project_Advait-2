@@ -8,7 +8,7 @@
   <link href="../css/index.css" rel="stylesheet">
   <link href="../css/class.css" rel="stylesheet">
 
-  <script src="../js/on_click_next_page.js" ></script>
+  <!--<script src="../js/on_click_next_page.js" ></script>-->
 
   <!--I don't think this needs to be deferred, just run before the defers below-->
   <script src="../js/send_request.js"></script>
@@ -32,7 +32,7 @@
         <input type="text" name="code" id="time" value=""> <br>
         What is the highest music related qualification you have attained? <br>
         <input type="text" name="code" id="qualification" value=""><br>
-        <input type="button" name="button" id="questionsButton" value="Start" class="timing-out" onClick="saveBeforeTasksQuestions(this.form)">
+        <input type="button" disabled name="button" id="questionsButton" value="Loading" onClick="saveBeforeTasksQuestions(this.form)">
       </form>
   </div>
 

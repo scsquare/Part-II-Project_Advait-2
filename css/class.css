@@ -66,6 +66,7 @@ div.flex-row {
     height: 10.5%;
     width: 100%;
     border: 1px solid rgb(255, 251, 228); 
+    position: relative;
 }
 
 .item.dragging i img{
@@ -105,6 +106,3 @@ textarea.larger {
     margin-left: 5px;
 }
 
-.timing-out{
-    visibility: hidden;
-}

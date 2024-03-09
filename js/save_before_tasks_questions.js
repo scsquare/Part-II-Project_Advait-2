@@ -9,6 +9,13 @@ function saveBeforeTasksQuestions (form) {
         var results="{'time':'".concat(time,"'},{'qualification':'",qualification,"'}");
         localStorage.setItem("beforeTaskQuestions",results);
 
+        //TODO: post results
+        UID=localStorage.getItem("UID");
+        alert("Your participant ID is "+UID+".")
+
+
+        data=UID+"#"+"Before Task Questions"+"#"+results;
+        post(data);
 
         window.location.href="../sets/Intro1.html";
     }
@@ -21,6 +28,5 @@ var qualification = document.getElementById("qualification");
 qualification.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    document.getElementById("questionsButton").click();
   }
 });

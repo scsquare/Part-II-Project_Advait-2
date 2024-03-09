@@ -5,15 +5,12 @@ function saveAfterTasksQuestions (form) {
 
     var results="{'q1':'".concat(q1,"'},{'q2':'",q2,"'},{'q3':'",q3,"'}");
     localStorage.setItem("afterTaskQuestions",results);
-    window.location.href="../results_download/Results_Download.html";
+
+    //TODO: post this
+    UID=localStorage.getItem("UID");
+
+    data=UID+"#"+"After Task Questions"+"#"+results;
+    post(data);
+
+    window.location.href="../outro/thankyou.html";
 }
-
-
-var q2 = document.getElementById("q2");
-
-q2.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("questionsButton").click();
-  }
-});

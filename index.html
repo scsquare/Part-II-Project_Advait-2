@@ -8,10 +8,9 @@
   <link href="css/index.css" rel="stylesheet">
   <link href="css/class.css" rel="stylesheet">
 
+  <script src="js/construct_playlist.js"></script>
 
-
-  <script src="js/storage_check.js" defer></script>
-  <script src="js/save_code.js" defer></script>
+  <script src="js/confirmConsent.js" defer></script>
 
 
 
@@ -29,9 +28,8 @@
     <form name="myForm" action="" method="GET">
       By typing your name here you are acknowledging that you have read the Participant Information Sheet and signing the above Consent Form: <br>
       <input type="text" name="name" id="name" value=""> <br> 
-      Enter your code here to start: <br>
-      <input type="text" name="code" id="code" value=""><br>
-      <input type="button" name="button" id="codeButton" value="Click" onClick="saveCode(this.form)">
+
+      <input type="button" name="button" id="codeButton" value="Click" onClick="confirmConsent()">
     </form>
 
   </div>

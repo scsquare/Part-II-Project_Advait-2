@@ -8,23 +8,20 @@
   <link href="../css/tempo.css" rel="stylesheet">
   <link href="../css/class.css" rel="stylesheet">
 
-  <script src="../js/on_load_page.js"></script> <!--this has to run AFTER get current page code-->
-
-  <script src="../js/on_click_next_page.js" defer></script>
-
+  <!--<script src="../js/on_click_next_page.js" defer></script>-->
 </head>
 
 <body>
-  <h1>Task 1: sort according to tempo</h1>
+  <h1>Introduction</h1>
 
   <div class="colored">
-    <p>In the following pages, please rank the given songs according to its tempo (i.e. speed/pace of the song).  </p> <br>
-    <p>Rank the songs in descending order of tempo: the faster the song, the higher up it ranks. </p><br>
-    <p> Below is a screenshot of what the interface looks like:</p> <br>
-    <p> On the left hand side of the page you will see a Spotify Playlist (1). <br> Please listen to the songs, and rank them using the drag and drop interface on your right (2). <br> We suggest you jump through bits of the song at different timestamps (eg. in 30 second intervals) to get an overview of the tempo over the entire song.<br>Click continue when you are done (3).</p>
+    <p>In the following pages, please rank the given songs on a given genre scale. For example: "ranking from Black Metal (top) to Classical Music (bottom)" means songs that sound closer to Black Metal should be closer to the top of the scale, whereas songs that sound more like Classical Music should be at the bottom. </p><br>
+    <p> Below is a screenshot of what the interface looks like:</p> 
+    <p> On the left hand side of the page you will see a Spotify Playlist (1). <br> Please listen to the songs, and rank them using the drag and drop interface on your right (2). <br> We suggest you jump through bits of the song at different timestamps (eg. in 30 second intervals) to get an overview of what it sounds like.<br>Click continue when you are done (3).</p>
+    <p> Each set of songs is expected to take about 5 minutes to sort. It's fine to go by instincts!</p>
     <img src="../pictures/IntroPage.png" style="height:400px;border: 5px solid brown;">
     <br>
-    <button id="cont">
+    <button id="cont" onClick="window.location.href = '../sets/Task1.html'">
       Click me to start
     </button>
   </div>
