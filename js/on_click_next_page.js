@@ -24,7 +24,7 @@ function writeResults(){
         data=UID+"#"+current_page_code+"#"+texts;
         console.log("presubmit", data, typeof(data));
         // post(data);
-        let test_string="helloWorld";
+        let test_string="helloWorld2";
         console.log("test_string", test_string);
         alt_post(test_string)
 
@@ -41,6 +41,7 @@ function writeResults(){
 }
 function alt_post(data_incoming){
     console.log("ALT POSTING");
+    console.log("url",url)
     console.log(typeof(data_incoming));
     // let packet={"value":data_incoming};
     // console.log("packet", packet, typeof(packet));
