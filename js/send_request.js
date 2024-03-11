@@ -1,4 +1,4 @@
-var url="https://script.google.com/macros/s/AKfycbxRAVsoNbzDXqBvKIy3XsnxhBlg0p3-urXadoOy9Y98GRwt1BCbe5Ioz6rS-m24MQaXFA/exec"
+var url="https://script.google.com/macros/s/AKfycbwnljertVsA17AgUsAJcSv4ws6hE_plbm5E_R-0ZLemT_7yWMU51ebXzqBJdxF-s1YgvA/exec"
 
 /***** 
 Post request with data as payload 
@@ -6,12 +6,22 @@ Post request with data as payload
 function post(data){
     //alert("posting "+data);
     fetch(url, {
-    method: "POST",
-    body:  data
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' }, // Set content type if sending JSON
+        body: data
     })
-    .catch(error=>{
-        //uh lets ignore it for now
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text(); // or response.json() if the response is JSON
     })
+    .then(data => {
+        console.log('Success:', data); // Handle success response
+    })
+    .catch(error => {
+        console.error('Error:', error); // Improved error handling
+    });
 }
 
 function get(){
