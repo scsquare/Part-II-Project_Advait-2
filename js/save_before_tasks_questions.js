@@ -15,6 +15,7 @@ function saveBeforeTasksQuestions (form) {
 
 
         data=UID+"#"+"Before Task Questions"+"#"+results;
+        console.log("saveBeforeTask", data, typeof(data));
         post(data);
 
         window.location.href="../sets/Intro1.html";

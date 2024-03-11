@@ -2,7 +2,7 @@ function writeResults(){
     var items= document.getElementsByClassName("song-name");
 
     const texts=[];
-
+    console.log("writeResults says hi");
     for (let i=0;i<8;i++){
         //get text of song name, extract int at the beginning of it
         var temp=Number((items[i].innerText)[0])-1; //changes it to 0-7
@@ -22,7 +22,11 @@ function writeResults(){
         UID=localStorage.getItem("UID");
 
         data=UID+"#"+current_page_code+"#"+texts;
-        post(data);
+        console.log("presubmit", data, typeof(data));
+        // post(data);
+        let test_string="helloWorld";
+        console.log("test_string", test_string);
+        alt_post(test_string)
 
         if (localStorage.getItem(current_page_code)===null){
             alert("ERROR on_click_next_page: store failed")
@@ -32,8 +36,35 @@ function writeResults(){
     } else {
         // Sorry! No Web Storage support..
         alert("ERROR: No Web Storage support.");
+        console.log("ERROR");
     }
 }
+function alt_post(data_incoming){
+    console.log("ALT POSTING");
+    console.log(typeof(data_incoming));
+    // let packet={"value":data_incoming};
+    // console.log("packet", packet, typeof(packet));
+    fetch(url, {
+        method: "POST",
+        headers: { 'Content-Type': 'text/plain' }, // Set content type if sending JSON
+        body: data_incoming
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text(); // or response.json() if the response is JSON
+    })
+    .then(data => {
+        console.log('Success:', data); // Handle success response
+    })
+    .catch(error => {
+        console.log("ERROR OCCURED");
+        console.error('Error:', error); // Improved error handling
+        console.log("error", error);
+    });
+}
+
 
 function updateCode(){ 
     //update working code
@@ -70,7 +101,7 @@ function findNextPage(){
 const contButton = document.getElementById("cont");
 
 contButton.addEventListener("click", () => {
-
+    console.log("button click");
     writeResults();
     updateCode();
     window.location.href = findNextPage();

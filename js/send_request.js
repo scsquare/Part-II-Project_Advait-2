@@ -3,12 +3,15 @@ var url="https://script.google.com/macros/s/AKfycbwnljertVsA17AgUsAJcSv4ws6hE_pl
 /***** 
 Post request with data as payload 
 */
-function post(data){
-    //alert("posting "+data);
+function post(data_incoming){
+    console.log("POSTING");
+    console.log(typeof(data_incoming));
+    // let packet={"value":data_incoming};
+    // console.log("packet", packet, typeof(packet));
     fetch(url, {
         method: "POST",
-        headers: { 'Content-Type': 'application/json' }, // Set content type if sending JSON
-        body: data
+        headers: { 'Content-Type': 'text/plain' }, // Set content type if sending JSON
+        body: String(data_incoming)
     })
     .then(response => {
         if (!response.ok) {
@@ -20,7 +23,9 @@ function post(data){
         console.log('Success:', data); // Handle success response
     })
     .catch(error => {
+        console.log("ERROR OCCURED");
         console.error('Error:', error); // Improved error handling
+        console.log("error", error);
     });
 }
 

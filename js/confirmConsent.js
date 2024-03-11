@@ -11,6 +11,7 @@ function confirmConsent () {
     else{
       //save code part moved to beforetaskquestions
       //actually proceed
+      console.log("change page");
       window.location.href = "sets/BeforeTasks.html";
       
     }
@@ -25,3 +26,5 @@ textinput.addEventListener("keypress", function(event) {
     document.getElementById("codeButton").click();
   }
 });
+
+console.log("CONFIRMING CONSENT");
