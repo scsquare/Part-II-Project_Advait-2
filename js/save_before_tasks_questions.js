@@ -7,7 +7,7 @@ function saveBeforeTasksQuestions (form) {
     }
     else{
         var results="{'time':'".concat(time,"'},{'qualification':'",qualification,"'}");
-        localStorage.setItem("beforeTaskQuestions",results);
+        //localStorage.setItem("beforeTaskQuestions",results);
 
         //TODO: post results
         UID=localStorage.getItem("UID");
@@ -15,8 +15,9 @@ function saveBeforeTasksQuestions (form) {
 
 
         data=UID+"#"+"Before Task Questions"+"#"+results;
-        console.log("saveBeforeTask", data, typeof(data));
-        post(data);
+        localStorage.setItem("results_concat",data);
+        //console.log("saveBeforeTask", data, typeof(data));
+        //post(data);
 
         window.location.href="../sets/Intro1.html";
     }

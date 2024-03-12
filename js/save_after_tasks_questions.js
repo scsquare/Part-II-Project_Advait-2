@@ -9,8 +9,11 @@ function saveAfterTasksQuestions (form) {
     //TODO: post this
     UID=localStorage.getItem("UID");
 
-    data=UID+"#"+"After Task Questions"+"#"+results;
-    post(data);
+    data="#"+"After Task Questions"+"#"+results;
+    existing_results=localStorage.getItem("results_concat");
+    new_results=existing_results.concat(data)
+    localStorage.setItem("results_concat",new_results);
+    post(new_results);
 
     window.location.href="../outro/thankyou.html";
 }

@@ -21,16 +21,16 @@ function writeResults(){
         //idek anymore
         UID=localStorage.getItem("UID");
 
-        data=UID+"#"+current_page_code+"#"+texts;
-        console.log("presubmit", data, typeof(data));
+        data="#"+current_page_code+"#"+texts;
+        existing_results=localStorage.getItem("results_concat");
+        new_results=existing_results.concat(data)
+        localStorage.setItem("results_concat",new_results);
+        //console.log("presubmit", data, typeof(data));
         // post(data);
-        let test_string="helloWorld2";
-        console.log("test_string", test_string);
-        alt_post(test_string)
+        //let test_string="helloWorld2";
+        //console.log("test_string", test_string);
+        //post(test_string)
 
-        if (localStorage.getItem(current_page_code)===null){
-            alert("ERROR on_click_next_page: store failed")
-        }
 
 
     } else {
@@ -39,32 +39,7 @@ function writeResults(){
         console.log("ERROR");
     }
 }
-function alt_post(data_incoming){
-    console.log("ALT POSTING");
-    console.log("url",url)
-    console.log(typeof(data_incoming));
-    // let packet={"value":data_incoming};
-    // console.log("packet", packet, typeof(packet));
-    fetch(url, {
-        method: "POST",
-        headers: { 'Content-Type': 'text/plain' }, // Set content type if sending JSON
-        body: data_incoming
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text(); // or response.json() if the response is JSON
-    })
-    .then(data => {
-        console.log('Success:', data); // Handle success response
-    })
-    .catch(error => {
-        console.log("ERROR OCCURED");
-        console.error('Error:', error); // Improved error handling
-        console.log("error", error);
-    });
-}
+
 
 
 function updateCode(){ 
