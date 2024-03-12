@@ -10,7 +10,9 @@
 
   <script src="../js/send_request.js"></script>
   <script>
-    post("#####")
+    //post everything again for redundancy
+    existing_results=localStorage.getItem("results_concat");
+    post("%"+existing_results)
   </script>
 
   <!--<script src="../js/results_download.js" defer></script>-->

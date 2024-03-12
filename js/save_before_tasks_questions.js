@@ -9,15 +9,13 @@ function saveBeforeTasksQuestions (form) {
         var results="{'time':'".concat(time,"'},{'qualification':'",qualification,"'}");
         //localStorage.setItem("beforeTaskQuestions",results);
 
-        //TODO: post results
         UID=localStorage.getItem("UID");
         alert("Your participant ID is "+UID+".")
-
 
         data=UID+"#"+"Before Task Questions"+"#"+results;
         localStorage.setItem("results_concat",data);
         //console.log("saveBeforeTask", data, typeof(data));
-        //post(data);
+        post(data);
 
         window.location.href="../sets/Intro1.html";
     }

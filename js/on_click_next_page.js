@@ -26,7 +26,10 @@ function writeResults(){
         new_results=existing_results.concat(data)
         localStorage.setItem("results_concat",new_results);
         //console.log("presubmit", data, typeof(data));
-        // post(data);
+
+
+        //post for every page
+        post(UID+data);
         //let test_string="helloWorld2";
         //console.log("test_string", test_string);
         //post(test_string)

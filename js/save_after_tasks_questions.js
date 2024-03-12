@@ -13,7 +13,7 @@ function saveAfterTasksQuestions (form) {
     existing_results=localStorage.getItem("results_concat");
     new_results=existing_results.concat(data)
     localStorage.setItem("results_concat",new_results);
-    post(new_results);
+    post(UID+data);
 
     window.location.href="../outro/thankyou.html";
 }
