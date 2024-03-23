@@ -50,6 +50,8 @@ div.flex-row {
     width: 40vw; 
     height: 75%;
     padding: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 5vh;
     background: var(--sortable-list);
     border-radius: 7px;
 }
@@ -63,10 +65,10 @@ div.flex-row {
     border-radius: 5px;
     margin-bottom: 1vh;
     justify-content: space-between;
-    height: 10.5%;
+    height: 9.5%;
     width: 100%;
     border: 1px solid rgb(255, 251, 228); 
-    position: relative;
+    position: relative
 }
 
 .item.dragging i img{
@@ -105,4 +107,3 @@ textarea.larger {
 .song-name{
     margin-left: 5px;
 }
-

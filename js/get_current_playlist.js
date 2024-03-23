@@ -104,6 +104,9 @@ function get_start_stop_genres(){
     document.getElementById("header").innerHTML="From "+ retrieve_attr(this_set,"start_genre")+" to "+retrieve_attr(this_set,"end_genre")
 
     document.getElementById("description").innerHTML="Sort songs on the scale of "+ retrieve_attr(this_set,"start_genre")+" (top) to "+retrieve_attr(this_set,"end_genre") +" (bottom).";
+
+    document.getElementById("top-genre").innerHTML=retrieve_attr(this_set,"start_genre")
+    document.getElementById("bottom-genre").innerHTML=retrieve_attr(this_set,"end_genre")
 }
 
 function five_minute_reminder(){

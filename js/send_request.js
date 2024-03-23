@@ -10,7 +10,7 @@ function post(data_incoming){
     // console.log("packet", packet, typeof(packet));
     fetch(url, {
         method: "POST",
-        headers: { 'Content-Type': 'text/plain' }, // Set content type if sending JSON
+        headers: { 'Content-Type': 'text/plain' }, 
         body: String(data_incoming)
     })
     .then(response => {
@@ -43,7 +43,7 @@ function get(){
         localStorage.setItem("working_page_code",this_code)
 
 
-        document.getElementById("questionsButton").value="Next";
+        document.getElementById("questionsButton").value="Continue";
         document.getElementById("questionsButton").disabled = false;
 
     })

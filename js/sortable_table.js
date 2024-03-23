@@ -18,7 +18,6 @@ const updateSortableList = (e) => {
     let siblings = [...sortableList.querySelectorAll(".item:not(.dragging)")];
 
     // Finding the sibling after which the dragging item should be placed
-    //nb y-coordinate increases as we go down. weird.
     let nextSibling = siblings.find(sibling => {
         //return e.clientY <= sibling.offsetTop + sibling.offsetHeight*3;
         //why is this 3? Trial and error-ed but why??
@@ -27,6 +26,7 @@ const updateSortableList = (e) => {
  
     // Inserting the dragging item before the found sibling
     sortableList.insertBefore(draggingItem, nextSibling);
+    sortableList.insertBefore(document.getElementById("bottom-genre"),null);
 }
 
 sortableList.addEventListener("dragover", updateSortableList);
